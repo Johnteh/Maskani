@@ -54,7 +54,7 @@ function SignUp() {
       await setDoc(doc(db, "users", user.uid), formDataCopy)
 
       navigate("/");
-      toast.success("sign-up was successful")
+      // toast.success("sign-up was successful")
      
     } catch (error) {
 
