@@ -154,6 +154,7 @@ function CreateListing() {
     ...formData,
     imgUrls,
     timestamp: serverTimestamp(),
+    userRef: auth.currentUser.uid,
    };
 
    delete formDataCopy.images;
