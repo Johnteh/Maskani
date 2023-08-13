@@ -11,6 +11,7 @@ import { doc, getDoc } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { db } from "../firebase";
+import {getAuth} from "firebase/auth";
 import Spinner from "../components/Spinner";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, {
@@ -20,11 +21,14 @@ import SwiperCore, {
   Pagination,
 } from "swiper";
 import "swiper/css/bundle";
+import Contact from "../components/Contact";
 export default function Listing() {
+  const auth = getAuth();
   const params = useParams();
   const [listing, setListing] = useState(null);
   const [loading, setLoading] = useState(true);
   const [shareLinkCopied, setShareLinkCopied] = useState(false);
+  const [contactLandlord, setContactLandlord] = useState(false);
   SwiperCore.use([Autoplay, Navigation, Pagination]);
   useEffect(() => {
 
@@ -96,7 +100,7 @@ export default function Listing() {
       )}
       <div className=" m-4 flex flex-col md:flex-row max-w-6xl
       lg:mx-auto p-4 rounded-lg  shadow-lg bg-white lg:space-x-5">
-        <div className="w-full h-[300px] lg-[400px]
+        <div className="w-full ]
           ">
           <p className="text-2xl font-bold mb-3 text-blue-900">
             {listing.name} - ${listing.offer ? listing.discountedPrice.toString()
@@ -125,12 +129,7 @@ export default function Listing() {
               )}</p>
 
           </div>
-          <p className="mt-3 mb-3">
-            <h3 className="font-semibold"> Description </h3>
-            {listing.description}
-          </p>
-
-          <ul className="flex items-center space-x-2 space-x-10 text-sm font-semibold">
+          <ul className="flex items-center space-x-2 space-x-10 text-sm font-semibold mt-3 mb-3">
             <li className="flex items-center whitespace-nowrap">
               <FaBed className="text-lg mr-1"/>
               {+listing.bedrooms > 1 ? `${listing.bedrooms} Bedrooms` : "1 Bedroom"}
@@ -148,6 +147,27 @@ export default function Listing() {
               {listing.furnished ? "furnished"  : "not furnished"}
             </li>
           </ul>
+
+          <p className="mt-3 mb-6">
+            <h3 className="font-semibold"> Description </h3>
+            {listing.description}
+          </p>
+
+          {listing.userRef !== auth.currentUser?.uid && !contactLandlord &&(
+            <div className="mt-6">
+            <button onClick={()=>setContactLandlord(true)} className="px-7 py-3 bg-blue-600 text-white font-medium text-sm uppercase rounded
+            shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700
+            focus:shadow-lg w-full text-center transition dutation-150 ease-in-out">Contact Owner</button>
+
+          </div>
+
+          )}
+          {contactLandlord && (
+            <Contact userRef={listing.userRef} listing={listing}/>
+          )}
+
+          
+          
 
         </div>
         <div className="bg-blue-300 w-full h-[200px] lg-[400px
