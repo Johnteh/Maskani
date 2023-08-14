@@ -11,7 +11,7 @@ import { doc, getDoc } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { db } from "../firebase";
-import {getAuth} from "firebase/auth";
+import { getAuth } from "firebase/auth";
 import Spinner from "../components/Spinner";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, {
@@ -22,6 +22,7 @@ import SwiperCore, {
 } from "swiper";
 import "swiper/css/bundle";
 import Contact from "../components/Contact";
+import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 export default function Listing() {
   const auth = getAuth();
   const params = useParams();
@@ -131,20 +132,20 @@ export default function Listing() {
           </div>
           <ul className="flex items-center space-x-2 space-x-10 text-sm font-semibold mt-3 mb-3">
             <li className="flex items-center whitespace-nowrap">
-              <FaBed className="text-lg mr-1"/>
+              <FaBed className="text-lg mr-1" />
               {+listing.bedrooms > 1 ? `${listing.bedrooms} Bedrooms` : "1 Bedroom"}
             </li>
             <li className="flex items-center whitespace-nowrap">
-              <FaBath className="text-lg mr-1"/>
+              <FaBath className="text-lg mr-1" />
               {+listing.bathromms > 1 ? `${listing.bathrooms} Bathrooms` : "1 Bathroom"}
             </li>
             <li className="flex items-center whitespace-nowrap">
-              <FaParking className="text-lg mr-1"/>
-              {listing.parking === true ? "parking available"  : "no parking"}
+              <FaParking className="text-lg mr-1" />
+              {listing.parking === true ? "parking available" : "no parking"}
             </li>
             <li className="flex items-center whitespace-nowrap">
-              <FaChair className="text-lg mr-1"/>
-              {listing.furnished ? "furnished"  : "not furnished"}
+              <FaChair className="text-lg mr-1" />
+              {listing.furnished ? "furnished" : "not furnished"}
             </li>
           </ul>
 
@@ -153,25 +154,37 @@ export default function Listing() {
             {listing.description}
           </p>
 
-          {listing.userRef !== auth.currentUser?.uid && !contactLandlord &&(
+          {listing.userRef !== auth.currentUser?.uid && !contactLandlord && (
             <div className="mt-6">
-            <button onClick={()=>setContactLandlord(true)} className="px-7 py-3 bg-blue-600 text-white font-medium text-sm uppercase rounded
+              <button onClick={() => setContactLandlord(true)} className="px-7 py-3 bg-blue-600 text-white font-medium text-sm uppercase rounded
             shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700
             focus:shadow-lg w-full text-center transition dutation-150 ease-in-out">Contact Owner</button>
 
-          </div>
+            </div>
 
           )}
           {contactLandlord && (
-            <Contact userRef={listing.userRef} listing={listing}/>
+            <Contact userRef={listing.userRef} listing={listing} />
           )}
 
-          
-          
+
+
 
         </div>
-        <div className="bg-blue-300 w-full h-[200px] lg-[400px
-          z-10 voverflow-x-hidden">
+        <div className="w-full h-[200px] md:h-[400px] z-10 overflow-x-hidden mt-6 md:mt-0 md:ml-2 ">
+          <MapContainer center={[listing.latitude, listing.longitude]} zoom={13}
+          scrollWheelZoom={false}
+          style={{ height: "100%", width: "100%" }}>
+            <TileLayer
+              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+            <Marker position={[listing.latitude, listing.longitude]}>
+              <Popup>
+                A pretty CSS3 popup. <br /> Easily customizable.
+              </Popup>
+            </Marker>
+          </MapContainer>
 
         </div>
       </div>
