@@ -130,7 +130,7 @@ export default function Listing() {
               )}</p>
 
           </div>
-          <ul className="sm:grid sm:grid-cols-2  lg:grid-cols-3 xl:grid-cols-4  space-x-2 space-x-10 text-sm font-semibold mt-3 mb-3">
+          <ul className="sm:grid sm:grid-cols-2  lg:grid-cols-3 xl:grid-cols-4  text-sm font-semibold mt-3 mb-3">
             <li className="flex items-center whitespace-nowrap">
               <FaBed className="text-lg mr-1" />
               {+listing.bedrooms > 1 ? `${listing.bedrooms} Bedrooms` : "1 Bedroom"}
