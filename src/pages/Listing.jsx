@@ -104,7 +104,7 @@ export default function Listing() {
         <div className="w-full ]
           ">
           <p className="text-2xl font-bold mb-3 text-blue-900">
-            {listing.name} - ${listing.offer ? listing.discountedPrice.toString()
+            {listing.name} - Ksh {listing.offer ? listing.discountedPrice.toString()
               .replace(/\B(?=(\d{3})+(?!\d))/g, ",") :
               listing.regularPrice.toString()
                 .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
@@ -125,7 +125,7 @@ export default function Listing() {
               {listing.offer && (
                 <p className="bg-green-800 w-full max-w-[200px]
                 rounded-md p-1 text-white text-center font-semibold shadow-md">
-                  ${(+listing.regularPrice) - (+listing.discountedPrice)} discount</p>
+                  Ksh {(+listing.regularPrice) - (+listing.discountedPrice)} discount</p>
 
               )}</p>
 
