@@ -19,15 +19,15 @@ We intend to bridge the gap by offering authentic listings to the users and brin
 
 ## TechStack Used
     
-    ### Front End
-    - ReactJs
-    -Tailwind css
+### Front End
+- ReactJs
+-Tailwind css
 
-    ### BackEnd
-    - firebase
-     -- firebase authentication
-     -- firestore database to make collections
-     -- firease storage to store images.
+### BackEnd
+- firebase
+-- firebase authentication
+-- firestore database to make collections
+-- firease storage to store images.
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
