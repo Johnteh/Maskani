@@ -2,8 +2,8 @@
 <p align="center">Realtor clone</p>
 
 <p align="center">
-  <img src="https://github.com/Johnteh/final_Airbnb_clone/blob/master/assets/hbnb-logo.png"
-       alt="Holbertonbnb logo"
+  <img src="https://github.com/Johnteh/realtor-clone-react/blob/main/src/assets/svg/realtor%20clone.png"
+       alt="home page"
        width="500"
   >
 </p>
