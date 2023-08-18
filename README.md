@@ -1,4 +1,12 @@
-# Getting Started with Create React App
+<h1 align="center">Mali safi</h1>
+<p align="center">Realtor clone</p>
+
+<p align="center">
+  <img src="https://github.com/Johnteh/final_Airbnb_clone/blob/master/assets/hbnb-logo.png"
+       alt="Holbertonbnb logo"
+       width="500"
+  >
+</p>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
