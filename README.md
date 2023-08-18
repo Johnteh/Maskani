@@ -4,7 +4,7 @@
 <p align="center">
   <img src="https://github.com/Johnteh/realtor-clone-react/blob/main/src/assets/svg/realtor%20clone.png"
        alt="home page"
-       width="500"
+       width="full"
   >
 </p>
 
