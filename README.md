@@ -22,14 +22,14 @@ We intend to bridge the gap by offering authentic listings to the users and brin
 ### Front End
 - ReactJs
 - Tailwind css
-The project structure involves:\
+<p>The project structure involves</p>
 - [main app](./src/App.js) Routing and registering of routes is here
 - [pages used](./src/pages)
 - [components](./src/components/) to maximize code reusability in react
 - [hooks](./src/hooks/) custom hooks i used in the project.
 
 ### BackEnd
- I used firebase for backend
+I used firebase for backend
 - firebase authentication
 - firestore database to make collections(documents)
 - firebase storage to store images.
