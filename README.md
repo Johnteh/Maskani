@@ -9,7 +9,8 @@
 </p>
 
 This project mission  was to easen the process of finding listings especially in kenya.\
-Currently the process is very hard and involves dedicating a day or two to find a property for either on sale or to rent.\ Most people who have tried to undertake this process online make complains about being conned by property owners or fake listings on most of online platforms.\
+Currently the process is very hard and involves dedicating a day or two to find a property for either on sale or to rent.\ 
+Most people who have tried to undertake this process online make complains about being conned by property owners or fake listings on most of online platforms.\
 We intend to bridge the gap by offering authentic listings to the users and bringing legit  business to home owners by bridging this gap.
 - have a look at the live project here https://realtor-clone-react-green.vercel.app/ 
 
