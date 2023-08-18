@@ -22,7 +22,7 @@ We intend to bridge the gap by offering authentic listings to the users and brin
 ### Front End :tv:
 - ReactJs
 - Tailwind css
-#### The structure :open_file_folder:
+#### structure :open_file_folder:
 - [main app](./src/App.js) Routing and registering of routes 
 - [pages used](./src/pages)
 - [components](./src/components/) to maximize code reusability in react
