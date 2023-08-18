@@ -28,11 +28,15 @@ We intend to bridge the gap by offering authentic listings to the users and brin
 - [components](./src/components/) to maximize code reusability in react
 - [hooks](./src/hooks/) custom hooks i used in the project.
 
-### BackEnd
-I used firebase for backend
-- firebase authentication
+### BackEnd(firebase)
+check out firebase rules i used here [firebase rules](./rules.txt)
+- firebase authentication.
+* To authenticate users
+* To login users.
 - firestore database to make collections(documents)
-- firebase storage to store images.
+* This is a Nosql database. In firebase They are called Collections.
+- firebase storage 
+* to store images in my application.
 
 Runs `npm start`` in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
