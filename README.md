@@ -8,30 +8,30 @@
   >
 </p>
 
-This project mission  was to easen the process of finding listings especially in kenya.
-Currently the process is very hard and involves dedicating a day or two to find a property for either on sale or to rent. Most people who have tried to undertake this process online make complains about being conned by property owners or fake listings on most of online platforms. 
+This project mission  was to easen the process of finding listings especially in kenya.\
+Currently the process is very hard and involves dedicating a day or two to find a property for either on sale or to rent.\ Most people who have tried to undertake this process online make complains about being conned by property owners or fake listings on most of online platforms.\
 We intend to bridge the gap by offering authentic listings to the users and bringing legit  business to home owners by bridging this gap.
 - have a look at the live project here https://realtor-clone-react-green.vercel.app/ 
 
-## project dependencies
+## project dependencies :family:
 - run `npm install` to install all the dependencies used in this project. 
 - can have a look at the dependies in [package.json](./package.json)
 
-## TechStack Used
+## TechStack Used :anchor:
     
-### Front End
+### Front End :tv:
 - ReactJs
 - Tailwind css
-#### The structure 
+#### The structure :open_file_folder:
 - [main app](./src/App.js) Routing and registering of routes 
 - [pages used](./src/pages)
 - [components](./src/components/) to maximize code reusability in react
 - [hooks](./src/hooks/) custom hooks i used in the project.
 
-### BackEnd
+### BackEnd :computer:
 For Backend i went with Firebase\
 check out firebase rules i used here [firebase rules](./rules.txt)
-#### Structure.
+#### Structure. :open_file_folder:
 1. firebase authentication.
 * To authenticate users
 * To login users.
