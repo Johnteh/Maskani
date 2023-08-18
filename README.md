@@ -22,8 +22,8 @@ We intend to bridge the gap by offering authentic listings to the users and brin
 ### Front End
 - ReactJs
 - Tailwind css
-<p>The project structure involves</p>
-- [main app](./src/App.js) Routing and registering of routes is here
+#### The structure 
+- [main app](./src/App.js) Routing and registering of routes 
 - [pages used](./src/pages)
 - [components](./src/components/) to maximize code reusability in react
 - [hooks](./src/hooks/) custom hooks i used in the project.
