@@ -24,12 +24,12 @@ We intend to bridge the gap by offering authentic listings to the users and brin
 -Tailwind css
 
 ### BackEnd
-- firebase
--- firebase authentication
--- firestore database to make collections
--- firease storage to store images.
+ I used firebase for backend
+- firebase authentication
+- firestore database to make collections(documents)
+- firebase storage to store images.
 
-Runs the app in the development mode.\
+Runs `npm start` in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
