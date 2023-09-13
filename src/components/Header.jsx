@@ -27,7 +27,7 @@ export default function Header() {
   return (
     <div className="bg-white border-b shadow-sm sticky top-0 z-40">
       <header className="flex justify-between items-center px-3 max-w-6xl mx-auto">
-        <div className="flex justify-between items-center space-x-2 cursor-pointer">
+        <div className="flex justify-between items-center  cursor-pointer">
           <div>
             <p className="">
               <FcHome className="'mr-4 text-6xl bg-red-500 rounded-full p-1 border-2 hover:bg-red-300" />
@@ -35,10 +35,10 @@ export default function Header() {
 
           </div>
           <div className="grid justify-center items-center">
-            <p className="text-3xl  text-red-700 font-extrabold text-center hover:text-red-400">
+            <p className=" text-md md:text-3xl  text-red-700 font-extrabold text-center hover:text-red-400">
               Maskani
             </p>
-            <p className="text-sm text-blue-600 hover:text-blue-400">Better living happy home</p>
+            <span className="hidden sm:block text-sm  text-blue-600 hover:text-blue-400">Better living happy home</span>
 
           </div>
           
@@ -46,7 +46,7 @@ export default function Header() {
           
         </div>
         <div>
-          <ul className="flex space-x-10">
+          <ul className="flex space-x-5 md:space-x-10">
             <li
               className={`cursor-pointer py-3 text-sm font-semibold text-gray-400 border-b-[3px] border-b-transparent ${pathMatchRoute("/") && "text-black border-b-red-500"
                 }`}
