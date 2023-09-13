@@ -1,4 +1,4 @@
-<h1 align="center">Mali safi :house:</h1>
+<h1 align="center">Maskani :house:</h1>
 <p align="center">Realtor clone</p>
 
 <p align="center">
