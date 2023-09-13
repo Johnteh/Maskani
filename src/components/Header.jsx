@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import maskani from "../../src/assets/svg/maskani.png";
+import {FcHome} from "react-icons/fc"
 export default function Header() {
   const [pageState, setPageState] = useState("Sign in");
   const location = useLocation();
   const navigate = useNavigate();
   const auth = getAuth();
+
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -24,13 +27,23 @@ export default function Header() {
   return (
     <div className="bg-white border-b shadow-sm sticky top-0 z-40">
       <header className="flex justify-between items-center px-3 max-w-6xl mx-auto">
-        <div>
-          <img
-            src="https://static.rdc.moveaws.com/images/logos/rdc-logo-default.svg"
-            alt="logo"
-            className="h-5 cursor-pointer"
-            onClick={() => navigate("/")}
-          />
+        <div className="flex justify-between items-center space-x-2 cursor-pointer">
+          <div>
+            <p className="">
+              <FcHome className="'mr-4 text-6xl bg-red-500 rounded-full p-1 border-2 hover:bg-red-300" />
+            </p>
+
+          </div>
+          <div className="grid justify-center items-center">
+            <p className="text-3xl  text-red-700 font-extrabold text-center hover:text-red-400">
+              Maskani
+            </p>
+            <p className="text-sm text-blue-600 hover:text-blue-400">Better living happy home</p>
+
+          </div>
+          
+          
+          
         </div>
         <div>
           <ul className="flex space-x-10">
