@@ -24,6 +24,7 @@ function SignUp() {
   const{name, email, password} = formData;
   const navigate = useNavigate();
 
+  // changes the values of the form when they are updated
   function onChange(e){
     setFormData((prevState)=>({
       ...prevState,
@@ -35,26 +36,29 @@ function SignUp() {
     e.preventDefault()
 
     try {
+      // function to create users with email and password. 
       const auth = getAuth()
       const userCredentials =  await createUserWithEmailAndPassword(
         auth, 
         email, 
         password
       );
-
+        
       updateProfile(auth.currentUser, {
         displayName: name
       })
 
+      // adding users to the db.
       const user = userCredentials.user
       const formDataCopy = {...formData}
       delete formData.password
       formDataCopy.timestamp = serverTimestamp();
 
+      // update  the users collection in the firestore db
       await setDoc(doc(db, "users", user.uid), formDataCopy)
 
       navigate("/");
-      // toast.success("sign-up was successful")
+      toast.success("sign-up was successful")
      
     } catch (error) {
 

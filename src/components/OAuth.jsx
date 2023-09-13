@@ -17,6 +17,8 @@ function OAuth() {
 
       //check if the user exists in the db
       const docRef = doc(db, "users", user.uid)
+
+      //save the user in a docsnap if they exist
       const docSnap = await getDoc(docRef)
 
       if (!docSnap.exists()){
